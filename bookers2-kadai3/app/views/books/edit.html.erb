@@ -1,0 +1,28 @@
+<div class="row">
+<div class="col-md-6 col-md-offset-3">
+
+<h1>Editing Book</h1>
+    <!-- エラーメッセージ表示-->
+    <% if @book.errors.any? %>
+    <h3>
+        <%= @book.errors.count %>error occurrence</h3>
+    <!--エラーメッセ-->
+    <ul>
+        <% @book.errors.full_messages.each do |message| %>
+        <li>
+            <%= message %>
+        </li>
+        <% end %>
+    </ul>
+    <% end %>
+    <!-- エラーメッセージ表示-->
+
+
+<%= render "books/newform", book: @book %>
+<%= link_to "Show", @book, class: "book_#{@book.id}" %>
+<%= link_to "Back", books_path, class: "back" %>
+
+</div>
+<div class="col-md-3"></div>
+
+</div>
